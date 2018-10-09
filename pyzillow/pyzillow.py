@@ -31,7 +31,7 @@ class ZillowWrapper(object):
         }
         return self.get_data(url, params)
 
-    def get_updated_property_details(self, zpid):
+    def get_updated_property_details(self, zpid, zipcode):
         """
         GetUpdatedPropertyDetails API
         """
@@ -39,6 +39,7 @@ class ZillowWrapper(object):
 
         params = {
             'zpid': zpid,
+            'citystatezip': zipcode,
             'zws-id': self.api_key
         }
         return self.get_data(url, params)
